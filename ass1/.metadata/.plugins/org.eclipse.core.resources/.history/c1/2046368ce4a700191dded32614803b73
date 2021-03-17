@@ -1,0 +1,15 @@
+package unsw.dungeon;
+
+import javafx.beans.property.IntegerProperty;
+
+public abstract class Terrain extends Entity{
+	
+	public Terrain(int x, int y) {
+		super(x, y);
+		// TODO Auto-generated constructor stub
+	}
+	
+	void interactTerrain() {
+	}
+
+}

@@ -1,0 +1,23 @@
+{ "command": "room", "venue": "Zoo", "room": "Penguin", "size": "small" }
+{ "command": "room", "venue": "Zoo", "room": "Tiger", "size": "medium" }
+{ "command": "room", "venue": "Zoo", "room": "Elephant", "size": "large" }
+{ "command": "room", "venue": "Gardens", "room": "Twig", "size": "small" }
+{ "command": "room", "venue": "Gardens", "room": "Willow", "size": "medium" }
+{ "command": "room", "venue": "Gardens", "room": "Figtree", "size": "large" }
+{ "command": "room", "venue": "Ocean", "room": "Fish", "size": "small" }
+{ "command": "room", "venue": "Ocean", "room": "Dolphin", "size": "medium" }
+{ "command": "room", "venue": "Ocean", "room": "Whale", "size": "large" }
+
+{ "command": "list", "venue": "Zoo" }
+{ "command": "list", "venue": "Gardens" }
+{ "command": "list", "venue": "Ocean" }
+
+{ "command": "request", "id": "1", "start": "2019-03-25", "end": "2019-03-26", "small": 1, "medium": 1, "large": 1 }
+{ "command": "request", "id": "2", "start": "2019-03-25", "end": "2019-03-26", "small": 1, "medium": 1, "large": 1 }
+{ "command": "request", "id": "3", "start": "2019-03-25", "end": "2019-03-26", "small": 1, "medium": 1, "large": 1 }
+{ "command": "request", "id": "4", "start": "2019-03-25", "end": "2019-03-26", "small": 1, "medium": 1, "large": 1 }
+
+{ "command": "list", "venue": "Zoo" }
+{ "command": "list", "venue": "Gardens" }
+{ "command": "list", "venue": "Ocean" }
+

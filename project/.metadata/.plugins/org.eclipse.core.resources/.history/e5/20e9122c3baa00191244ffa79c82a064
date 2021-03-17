@@ -1,0 +1,50 @@
+package unsw.dungeon;
+
+public class Enemy extends Entity implements EnemyObserver{
+	private Dungeon dungeon;
+	private EnemyState state; 
+	
+	public Enemy(Dungeon dungeon, int x, int y) {
+		super(x, y);
+		this.dungeon = dungeon;
+		this.state = new AttackState();
+	}
+    
+	public EnemyState getState() { 
+		return state;
+	}
+    
+    public EnemyState Run() {
+		return state = state.Run();
+	}
+	
+	public EnemyState Attack() {
+		return state =  state.Attack();
+	}
+	
+	private void Move() {
+		
+		if (state instanceof RunState) {
+			MoveAway(dungeon.getPlayer());
+		}
+		if (state instanceof AttackState) {
+			MoveTowards(dungeon.getPlayer());
+		}
+	}
+	
+	public void MoveAway(Player P) {
+		
+	}
+
+	@Override
+	public void update(Player p) {
+		if (p.getState() instanceof VincibleState)
+			Attack();
+		else
+			Run();
+		Move();
+	}
+
+	
+	
+}

@@ -1,0 +1,26 @@
+package unsw.dungeon;
+
+public class FloorSwitch extends Entity {
+	
+	private Dungeon dungeon;
+	public SwitchState state; 
+	
+	public FloorSwitch(Dungeon dungeon, int x, int y) {
+		super(x, y);
+		this.dungeon = dungeon;
+		this.state = new SwitchOff();
+	}
+	public SwitchState getState() {
+		return state;
+	}
+	public void activateSwitchState() {
+		state = state.activateSwitchState();
+	}
+	
+	public void deactivateSwitchState() {
+		state = state.deactivateSwitchState();
+	}
+
+	
+	
+}

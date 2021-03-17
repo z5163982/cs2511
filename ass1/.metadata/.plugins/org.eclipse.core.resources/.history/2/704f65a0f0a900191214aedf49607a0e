@@ -1,0 +1,17 @@
+package unsw.dungeon;
+
+public class swordIntact implements SwordState {
+
+	@Override
+	public SwordState newSword() {
+		// TODO Auto-generated method stub
+		return new newSword();
+	}
+
+	@Override
+	public SwordState swordBreak() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

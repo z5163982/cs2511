@@ -1,0 +1,81 @@
+package unsw.dungeon;
+
+import java.lang.Math;
+
+public class Enemy extends Entity implements EnemyObserver{
+	private Dungeon dungeon;
+	private EnemyState state; 
+	
+	public Enemy(Dungeon dungeon, int x, int y) {
+		super(x, y);
+		this.dungeon = dungeon;
+		this.state = new AttackState();
+	}
+    
+	public EnemyState getState() { 
+		return state;
+	}
+    
+    public EnemyState Run() {
+		return state = state.Run();
+	}
+	
+	public EnemyState Attack() {
+		return state =  state.Attack();
+	}
+	
+	private void Move() {
+		
+		if (state instanceof RunState) {
+			MoveAway(dungeon.getPlayer());
+		}
+		if (state instanceof AttackState) {
+			MoveTowards(dungeon.getPlayer());
+		}
+	}
+	
+	private void MoveTowards(Player P) {
+		String direction = direction(P);
+		if (direction.equals("left"))
+			 x().set(getX() - 1);
+		if (direction.equals("right"))
+			 x().set(getX() + 1);
+	}
+
+	public void MoveAway(Player P) {
+		
+	}
+	
+	public String direction(Player P) {
+		int x1 = P.getX();
+		int y1 = P.getY();
+		int x2 = this.getX();
+		int y2 = this.getY();
+		int dist = java.lang.Math.abs(x1 - x2) + java.lang.Math.abs(y1 - y2);
+		int newdist = java.lang.Math.abs(x1 - 1 - x2) + java.lang.Math.abs(y1 - y2);
+		if (newdist < dist)
+			return "left";
+		newdist = java.lang.Math.abs(x1 + 1 - x2) + java.lang.Math.abs(y1 - y2);
+		if (newdist < dist) 
+			return "right";
+		newdist = java.lang.Math.abs(x1 - x2) + java.lang.Math.abs(y1 - 1 - y2);
+		if (newdist < dist) 
+			return "up";
+		newdist = java.lang.Math.abs(x1 - x2) + java.lang.Math.abs(y1 + 1 - y2);
+		if (newdist < dist) 
+			return "down";
+		return null;
+	}
+
+	@Override
+	public void update(Player p) {
+		if (p.getState() instanceof VincibleState)
+			Attack();
+		else
+			Run();
+		Move();
+	}
+
+	
+	
+}

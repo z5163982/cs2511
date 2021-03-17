@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;project/src/unsw/dungeon/StoryTwoView&apos; to &apos;StoryTwoView.fxml&apos;" description="Rename resource &apos;StoryTwoView&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/unsw/dungeon/StoryTwoView" name="StoryTwoView.fxml" stamp="1564824184744" updateReferences="true"/>
+</session>
